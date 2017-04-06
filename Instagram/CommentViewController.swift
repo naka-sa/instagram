@@ -8,31 +8,30 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 import FirebaseDatabase
 import SVProgressHUD
 
 class CommentViewController: UIViewController {
-    var postData: PostData!
-    
-    @IBOutlet weak var commentUserName: UILabel!
     
     @IBOutlet weak var commentField: UITextField!
     
+    //target
+    var targetcaption:String = ""
+    
     @IBAction func commentPostButton(_ sender: Any) {
-        
-        
-        
-        var comments = postData.comments
+        // postDataに必要な情報を取得しておく
         let name = FIRAuth.auth()?.currentUser?.displayName
-        let comment:String = commentField.text!
-        let time = NSDate.timeIntervalSinceReferenceDate
-        let comment_data =  ["commenter":name,"time": String(time),"comment_txt":comment]
-        let postRef = FIRDatabase.database().reference().child(Const.PostPath).child(postData.id!)
-        comments.append(comment_data as! [String : String])
-        postRef.updateChildValues(["comments":comments])
         
+        // 辞書を作成してFirebaseに保存する
+        let postRef = FIRDatabase.database().reference().child(Const.PostPath)
+        let postData = ["caption": "\(targetcaption) : \n : \(name!) : \(commentField.text!)"]
+        postRef.updateChildValues(postData)
+        
+        //コメント投稿を完了する
         SVProgressHUD.showSuccess(withStatus: "コメントを投稿しました")
-        self.dismiss(animated: true, completion: nil)
+        //self.dismiss(animated: true, completion: nil)
+        UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
     }
 
  

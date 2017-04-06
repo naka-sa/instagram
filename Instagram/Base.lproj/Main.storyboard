@@ -345,27 +345,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfb-7f-QKW">
-                                <rect key="frame" x="26" y="60" width="323" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GN6-4v-ii5">
-                                <rect key="frame" x="26" y="91" width="323" height="30"/>
+                                <rect key="frame" x="26" y="40" width="323" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="I4g-hW-3Gx"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xmh-6B-pv1">
-                                <rect key="frame" x="26" y="181" width="322" height="40"/>
+                                <rect key="frame" x="26" y="200" width="322" height="40"/>
                                 <state key="normal" title="キャンセル" backgroundImage="btn"/>
                                 <connections>
                                     <action selector="commentCancelButton:" destination="iaX-Pm-O85" eventType="touchUpInside" id="hPK-fa-LLb"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9FT-Ex-ln6">
-                                <rect key="frame" x="26" y="131" width="323" height="40"/>
+                                <rect key="frame" x="26" y="150" width="323" height="40"/>
                                 <state key="normal" title="投稿" backgroundImage="btn"/>
                                 <connections>
                                     <action selector="commentPostButton:" destination="iaX-Pm-O85" eventType="touchUpInside" id="DCU-W7-53f"/>
@@ -376,23 +373,18 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="GN6-4v-ii5" secondAttribute="trailing" constant="10" id="1vX-9r-Rca"/>
                             <constraint firstItem="9FT-Ex-ln6" firstAttribute="leading" secondItem="sQD-D8-69b" secondAttribute="leadingMargin" constant="10" id="1vo-Wj-cBz"/>
-                            <constraint firstItem="GN6-4v-ii5" firstAttribute="top" secondItem="kfb-7f-QKW" secondAttribute="bottom" constant="10" id="4JL-eL-1uy"/>
-                            <constraint firstItem="kfb-7f-QKW" firstAttribute="leading" secondItem="sQD-D8-69b" secondAttribute="leadingMargin" constant="10" id="5iM-WP-jR0"/>
+                            <constraint firstItem="GN6-4v-ii5" firstAttribute="top" secondItem="Ug6-2R-P0n" secondAttribute="bottom" constant="20" id="4eM-Gf-wtV"/>
                             <constraint firstItem="Xmh-6B-pv1" firstAttribute="top" secondItem="9FT-Ex-ln6" secondAttribute="bottom" constant="10" id="7c6-G0-FJx"/>
                             <constraint firstItem="Xmh-6B-pv1" firstAttribute="centerX" secondItem="sQD-D8-69b" secondAttribute="centerX" id="AhZ-R6-sos"/>
                             <constraint firstItem="GN6-4v-ii5" firstAttribute="leading" secondItem="sQD-D8-69b" secondAttribute="leadingMargin" constant="10" id="DDh-b5-DTA"/>
-                            <constraint firstItem="kfb-7f-QKW" firstAttribute="top" secondItem="Ug6-2R-P0n" secondAttribute="bottom" constant="40" id="IYn-hj-uqZ"/>
                             <constraint firstItem="GN6-4v-ii5" firstAttribute="centerX" secondItem="sQD-D8-69b" secondAttribute="centerX" id="QV4-ar-1Ms"/>
                             <constraint firstItem="9FT-Ex-ln6" firstAttribute="centerX" secondItem="sQD-D8-69b" secondAttribute="centerX" id="fW0-57-OyO"/>
                             <constraint firstItem="Xmh-6B-pv1" firstAttribute="leading" secondItem="sQD-D8-69b" secondAttribute="leadingMargin" constant="10" id="nGN-hN-jQ7"/>
                             <constraint firstItem="9FT-Ex-ln6" firstAttribute="top" secondItem="GN6-4v-ii5" secondAttribute="bottom" constant="10" id="p1z-4m-OM8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="kfb-7f-QKW" secondAttribute="trailing" constant="10" id="uLj-Nn-dUE"/>
-                            <constraint firstItem="kfb-7f-QKW" firstAttribute="centerX" secondItem="sQD-D8-69b" secondAttribute="centerX" id="wqI-Kn-fgM"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="commentField" destination="GN6-4v-ii5" id="THm-xt-f5L"/>
-                        <outlet property="commentUserName" destination="kfb-7f-QKW" id="hF4-Cm-16c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rac-2e-0aX" userLabel="First Responder" sceneMemberID="firstResponder"/>

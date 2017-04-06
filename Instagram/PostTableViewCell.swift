@@ -19,11 +19,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     
     @IBOutlet weak var captionLabel: UILabel!
-    
-    @IBOutlet weak var commentButton: UIButton!
-    
-    @IBOutlet weak var commentLabel: UILabel!
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -34,6 +30,14 @@ class PostTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    @IBAction func commentButton(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "Comment") as! CommentViewController
+        nextVC.targetcaption = captionLabel.text!
+        UIApplication.shared.keyWindow?.rootViewController?.present(nextVC, animated: true, completion: nil)
+    }
+    
     
     func setPostData(postData: PostData) {
         self.postImageView.image = postData.image
