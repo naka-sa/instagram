@@ -17,21 +17,20 @@ class CommentViewController: UIViewController {
     @IBOutlet weak var commentField: UITextField!
     
     //target
-    var targetcaption:String = ""
+    var postData:PostData!
     
     @IBAction func commentPostButton(_ sender: Any) {
         // postDataに必要な情報を取得しておく
         let name = FIRAuth.auth()?.currentUser?.displayName
         
         // 辞書を作成してFirebaseに保存する
-        let postRef = FIRDatabase.database().reference().child(Const.PostPath)
-        let postData = ["caption": "\(targetcaption) : \n : \(name!) : \(commentField.text!)"]
+        let postRef = FIRDatabase.database().reference().child(Const.PostPath).child(self.postData.id!)
+        let postData = ["caption": "\(self.postData.caption!) : \n : \(name!) : \(commentField.text!)"]
         postRef.updateChildValues(postData)
         
         //コメント投稿を完了する
         SVProgressHUD.showSuccess(withStatus: "コメントを投稿しました")
-        //self.dismiss(animated: true, completion: nil)
-        UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 
  

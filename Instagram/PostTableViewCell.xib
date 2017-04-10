@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="0.0" width="392" height="528"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="392" height="528"/>
+                <rect key="frame" x="0.0" y="0.0" width="392" height="527"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZf-12-ZJY">
@@ -67,9 +67,6 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <state key="normal" title="コメント" backgroundImage="btn"/>
-                        <connections>
-                            <action selector="commentButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="saw-9e-qTK"/>
-                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -93,6 +90,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="captionLabel" destination="HZX-DK-UUx" id="B8M-pr-8fl"/>
+                <outlet property="commentButton" destination="bQJ-w4-NoT" id="1rf-TC-r7U"/>
                 <outlet property="dateLabel" destination="LE0-eD-I2L" id="8HS-gt-pIK"/>
                 <outlet property="likeButton" destination="sZf-12-ZJY" id="c8s-pI-YpN"/>
                 <outlet property="likeLabel" destination="Twk-5z-wlR" id="HDp-Og-USH"/>
